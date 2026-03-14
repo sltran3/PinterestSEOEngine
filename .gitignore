@@ -1,0 +1,37 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Environment / secrets
+.env
+.env.*
+
+# Database
+pinterest_seo.db
+
+# Browser session (stored Pinterest login cookies)
+.browser_session/
+
+# Logs
+logs/
+*.log
+
+# Pipeline outputs
+dashboard.png
+dashboard_summary.csv
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# macOS
+.DS_Store
+
+# pytest
+.pytest_cache/
