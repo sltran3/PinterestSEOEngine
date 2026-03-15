@@ -68,7 +68,7 @@ Since Pinterest builds its pages with JavaScript, the analytics data isn't in th
 
 ### Why SQLite?
 
-No server, no setup. SQLite is a single file (`pinterest_seo.db`) that Python can read and write to directly. Every daily run appends a new row to the `metrics` table — after 30 days you have 30 data points per pin, which is enough to see trends.
+No server and no setup. SQLite is a single file `pinterest_seo.db` that Python can read and write to directly. So every daily run appends a new row to the `metrics` table after 30 days you have 30 data points per pin to see trends.
 
 ### How keyword scoring works
 
@@ -76,7 +76,7 @@ TF-IDF finds words that are distinctive to a specific pin compared to all your o
 
 ### How A/B testing works
 
-You write two versions of a pin (same image, different title or description) and tag them as the same `variant_group`. The engine collects engagement rate data for both over 14 days and runs a Welch t-test. If `p < 0.05` it has statistical confidence that one version is genuinely better and marks it as the winner.
+You write two versions of a pin (same image, different title or description) and tag them as the same `variant_group`. The engine collects engagement rate data for both over 14 days and runs a t-test. If `p < 0.05` it has statistical confidence that one version is genuinely better and marks it as the winner.
 
 ---
 
@@ -85,7 +85,7 @@ You write two versions of a pin (same image, different title or description) and
 ### Requirements
 
 - Python 3.11+
-- Node.js 18+ (only if using the web dashboard)
+- Node.js 18+ 
 - A Pinterest Business account
 - Your own Pinterest pins with analytics enabled
 
@@ -121,7 +121,7 @@ export PINTEREST_PIN_URLS="https://www.pinterest.com/pin/ID1/,https://www.pinter
 
 ## Running the project
 
-### Test run (recommended first time)
+### Test run
 
 Before starting the scheduler, run the pipeline once manually to confirm everything works:
 
@@ -157,8 +157,6 @@ If the scraper isn't capturing data, set `HEADLESS = False` in `scraper.py` to w
 
 ## Web dashboard
 
-Instead of opening `dashboard.png` manually you can run a live web dashboard.
-
 ### Start the API
 
 ```bash
@@ -185,14 +183,11 @@ pytest test_stage2.py -v
 pytest test_stage3.py -v
 pytest test_stage4.py -v
 ```
-
-Tests use a temporary database and mock out all Playwright calls so they run offline in under a second.
-
 ---
 
 ## A/B testing your pins
 
-To run an A/B test, create two pins on Pinterest with the same image but different titles or descriptions. Then register them as a variant group using the web dashboard or directly in the database:
+To run an A/B test, create two pins on Pinterest with the same image but different titles or descriptions. Then register them as a variant group using the web dashboard:
 
 ```python
 from database import get_conn
