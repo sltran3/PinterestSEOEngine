@@ -64,7 +64,7 @@ Pinterest (your account)
 
 ### Why Playwright?
 
-Pinterest builds its pages with JavaScript — the analytics data isn't in the raw HTML. Playwright launches a real Chromium browser, waits for the page to fully load, and intercepts the internal API call Pinterest makes to populate the stats panel. This gives us clean structured JSON directly instead of scraping the DOM.
+Since Pinterest builds its pages with JavaScript, the analytics data isn't in the raw HTML. Playwright launches a real Chromium browser, waits for the page to fully load, and intercepts the internal API call Pinterest makes to populate the stats panel. This gives us clean structured JSON directly instead of scraping the DOM.
 
 ### Why SQLite?
 
@@ -155,7 +155,7 @@ If the scraper isn't capturing data, set `HEADLESS = False` in `scraper.py` to w
 
 ---
 
-## Optional: Web dashboard
+## Web dashboard
 
 Instead of opening `dashboard.png` manually you can run a live web dashboard.
 
