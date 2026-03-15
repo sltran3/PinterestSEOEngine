@@ -17,7 +17,7 @@ Every night at 3am it:
 3. **Evaluates A/B tests** — compares pin variants you've written (different titles or descriptions for the same content) and declares a winner using a statistical significance test
 4. **Generates a dashboard** — produces a `dashboard.png` with engagement trends over time, keyword health scores, and A/B test results
 
-> **Important:** This only works on pins you own on a Pinterest Business account. Pinterest only shows analytics data to the pin's owner.
+**Notice:** This only works on pins you own on a Pinterest Business account.
 
 ---
 
